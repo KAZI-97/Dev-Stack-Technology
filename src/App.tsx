@@ -3,6 +3,7 @@ import Banner from "./Components/Banner"
 import Nav from "./Components/Nav"
 import type {ITechType} from './type'
 import Technologies from "./Components/Technologies/Technologies"
+import Foot from "./Footer"
 
 
 const fetchData = async():Promise<ITechType[]> =>{
@@ -22,6 +23,7 @@ function App() {
       <Suspense fallback={<h1>Loading...Data</h1>}>
           <Technologies TechPromise={TechPromise}></Technologies>
       </Suspense>
+      <Foot></Foot>
     
     </>
   )

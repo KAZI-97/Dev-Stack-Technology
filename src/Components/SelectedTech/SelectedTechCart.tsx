@@ -14,8 +14,7 @@ const SelectedTechCart = ({ SelectStack, setSelectStack }: Prp) => {
         setSelectStack(remaininStack);
     }
     const HandleRemoveAllBtn = ()=>{
-         SelectStack = []
-        setSelectStack(SelectStack);
+        setSelectStack([]);
 
     }
   return (
