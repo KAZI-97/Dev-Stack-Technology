@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { ITechType } from "../../type";
 import { TiDelete } from "react-icons/ti";
+import { toast } from "react-toastify";
 
 // import React from 'react';
 interface Prp {
@@ -12,9 +13,11 @@ const SelectedTechCart = ({ SelectStack, setSelectStack }: Prp) => {
     const HandleRemoveStack = (st:ITechType) =>{
         const remaininStack = SelectStack.filter((stk) => stk.name != st.name)
         setSelectStack(remaininStack);
+        toast.success(`Stack ${st.name} has been removed from List`)
     }
     const HandleRemoveAllBtn = ()=>{
         setSelectStack([]);
+        toast.warn(`All the stack have been removed from the selected list`)
 
     }
   return (

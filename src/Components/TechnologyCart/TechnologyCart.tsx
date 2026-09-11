@@ -1,6 +1,7 @@
 import { useState, type Dispatch } from "react";
 import type { ITechType } from "../../type";
 import "./TechnologyCart.css";
+import { toast } from "react-toastify";
 
 interface Prop {
     Tech_Cart: ITechType;
@@ -22,6 +23,7 @@ const TechnologyCart = ({ Tech_Cart,SelectStack,setSelectStack }: Prop) => {
     const HandleBtnStatus = () =>{
         setBtnstatus(true)
         const newStack = [...SelectStack,Tech_Cart]
+        toast(`Stack ${name} have been Added Successfully`)
         setSelectStack(newStack)
 
 
