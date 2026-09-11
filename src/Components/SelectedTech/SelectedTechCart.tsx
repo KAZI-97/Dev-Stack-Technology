@@ -9,6 +9,15 @@ interface Prp {
 }
 
 const SelectedTechCart = ({ SelectStack, setSelectStack }: Prp) => {
+    const HandleRemoveStack = (st:ITechType) =>{
+        const remaininStack = SelectStack.filter((stk) => stk.name != st.name)
+        setSelectStack(remaininStack);
+    }
+    const HandleRemoveAllBtn = ()=>{
+         SelectStack = []
+        setSelectStack(SelectStack);
+
+    }
   return (
     <>
       {SelectStack.length === 0 ? (
@@ -39,12 +48,19 @@ const SelectedTechCart = ({ SelectStack, setSelectStack }: Prp) => {
 
               {/* Delete Button */}
               <div>
-                <button className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-500 transition-all duration-200 hover:bg-red-500 hover:text-white">
+                <button onClick={()=>HandleRemoveStack(stack)} className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-500 transition-all duration-200 hover:bg-red-500 hover:text-white">
                   <TiDelete size={22} />
                 </button>
               </div>
             </div>
           ))}
+          <>
+            {SelectStack.length > 0 ? (
+        <div className="flex justify-center items-center">
+          <button onClick={HandleRemoveAllBtn} className="btn btn-active btn-secondary rounded w-60 h-2/3 p-2.5 mt-4 mx-auto ">Remove All</button>
+        </div>
+      ) : " "}
+          </>
         </>
       )}
     </>
