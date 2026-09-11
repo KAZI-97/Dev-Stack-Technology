@@ -75,7 +75,7 @@ const TechnologyCart = ({ Tech_Cart,SelectStack,setSelectStack }: Prop) => {
 
             {/* Button */}
             <button onClick={HandleBtnStatus} disabled={Btnstatus}>
-                {Btnstatus == true ? "Selected":'Add To Stack'}
+                {Btnstatus == true ? "Already Selected":'Add To Stack'}
             </button>
 
         </div>
