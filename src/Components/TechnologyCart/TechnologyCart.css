@@ -82,7 +82,7 @@
     font-weight: bold;
 }
 
-.technology-card button {
+.technology-card button  {
     width: 100%;
 
     padding: 16px;
@@ -96,4 +96,8 @@
     font-size: 18px;
 
     cursor: pointer;
+}
+.technology-card :disabled{
+    background: #667085;
+    cursor: not-allowed;
 }

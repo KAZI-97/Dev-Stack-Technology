@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react"
+import { Suspense, useState} from "react"
 import Banner from "./Components/Banner"
 import Nav from "./Components/Nav"
 import type {ITechType} from './type'
@@ -13,7 +13,8 @@ const fetchData = async():Promise<ITechType[]> =>{
 
 function App() {
   const[TechPromise] = useState(() => fetchData())
-  
+
+
   return (
     <>
       <Nav></Nav>

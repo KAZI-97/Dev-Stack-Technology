@@ -1,11 +1,14 @@
+import { useState, type Dispatch } from "react";
 import type { ITechType } from "../../type";
 import "./TechnologyCart.css";
 
 interface Prop {
     Tech_Cart: ITechType;
+    setSelectStack : Dispatch<ITechType[]>;
+    SelectStack:ITechType[]
 }
 
-const TechnologyCart = ({ Tech_Cart }: Prop) => {
+const TechnologyCart = ({ Tech_Cart,SelectStack,setSelectStack }: Prop) => {
     const {
         name,
         description,
@@ -15,6 +18,15 @@ const TechnologyCart = ({ Tech_Cart }: Prop) => {
         rating,
         badge
     } = Tech_Cart;
+    const [Btnstatus,setBtnstatus] = useState<boolean>(false)
+    const HandleBtnStatus = () =>{
+        setBtnstatus(true)
+        const newStack = [...SelectStack,Tech_Cart]
+        setSelectStack(newStack)
+
+
+        
+    }
 
     return (
         <div className="technology-card">
@@ -60,8 +72,8 @@ const TechnologyCart = ({ Tech_Cart }: Prop) => {
             </div>
 
             {/* Button */}
-            <button>
-                Add to Stack
+            <button onClick={HandleBtnStatus} disabled={Btnstatus}>
+                {Btnstatus == true ? "Selected":'Add To Stack'}
             </button>
 
         </div>
