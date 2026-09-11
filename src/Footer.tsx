@@ -53,7 +53,7 @@ const Foot = () => {
 
           {/* Product */}
           <div>
-            <h2 className="mb-5 text-sm font-bold uppercase tracking-wider text-white">
+            <h2 className="mb-5 text-sm font-bold uppercase tracking-wider text-black">
               Product
             </h2>
 
@@ -89,7 +89,7 @@ const Foot = () => {
 
           {/* Company */}
           <div>
-            <h2 className="mb-5 text-sm font-bold uppercase tracking-wider text-white">
+            <h2 className="mb-5 text-sm font-bold uppercase tracking-wider text-black">
               Company
             </h2>
 
@@ -125,7 +125,7 @@ const Foot = () => {
 
           {/* Legal */}
           <div>
-            <h2 className="mb-5 text-sm font-bold uppercase tracking-wider text-white">
+            <h2 className="mb-5 text-sm font-bold uppercase tracking-wider text-black">
               Legal
             </h2>
 
